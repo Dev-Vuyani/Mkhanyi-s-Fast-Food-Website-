@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makhanyi's Fast Food</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffc107, #f8f9fa);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: #ffc107;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.4s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #cbcdda;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo{
+            font-size: 30px;
+            font-weight: 700;
+            
+        
+        }
+
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('logo.jpg') no-repeat center center/cover;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            z-index: 2;
+            color: white;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0 auto 20px auto; /* Center horizontally with top & bottom margin */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: fit-content;
+    text-align: center; /* Align text content center */
+}
+
+
+        .hero-content p {
+            font-size: 30px;
+            margin-bottom: 20px;
+            
+        }
+
+        .hero-content h2 {
+            font-size: 40px;
+            
+            
+        }
+        .hero-content .btn {
+    padding: 10px 25px;
+    font-size: 18px;
+    background-color: #ffc107;
+    border: none;
+    color: #333;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    text-decoration: none;
+}
+
+.hero-content .btn:hover {
+    background-color: rgb(157, 255, 0);
+    color: white;
+    box-shadow: 0 0 25px rgba(255, 225, 0, 1), 0 0 40px rgba(255, 225, 0, 0.8);
+}
+
+
+        /* Footer */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: white;
+            font-size: 14px;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .navbar ul li a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1 class="logo"><b>MAKHANYI'S FAST FOOD</b></h1>
+        <ul>
+            <li><a href="index.html"><b>Home</b></a></li>
+            <li><a href="about.html"><b>About</b></a></li>
+            <li><a href="menu.html"><b>Menu</b></a></li>
+            <li><a href="contact.html"><b>Contact</b></a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 id="hero-header"></h1>
+
+            <h2>FAST FOOD </h2>
+            <p><i>"The best fast food eKasi! Freshly prepared kasi meals just for you."</i></p>
+            <a href="menu.html" class="btn">Explore Menu</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Makhanyi's Fast Food. Created by Vuyani Mthembu. All Rights Reserved.
+    </footer>
+
+    <script>
+        const text = "Makhanyi's";
+        const header = document.getElementById('hero-header');
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                header.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 150);
+            } else {
+                setTimeout(() => {
+                    header.textContent = "";
+                    index = 0;
+                    typeEffect();
+                }, 3000);
+            }
+        }
+
+        typeEffect();
+    </script>
+</body>
+</html>
